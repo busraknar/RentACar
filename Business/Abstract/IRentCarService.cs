@@ -1,5 +1,5 @@
-﻿using Core.DataAccess;
-using Entities.Concrete;
+﻿using Core.Business;
+using Core.Entities;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace Business.Abstract
 {
-    public interface IRentCarDal:IEntityRepository<RentCar>
+    public interface IRentCarService<T> : IService<T> where T : class, IEntity, new()
     {
         List<RentCarDetailDto> GetDetails();
     }

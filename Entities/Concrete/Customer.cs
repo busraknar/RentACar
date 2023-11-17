@@ -12,7 +12,7 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public int Year { get; set; }
+        public int BirthYear { get; set; }
         public string City { get; set; }
 
         public string Phone { get; set; }

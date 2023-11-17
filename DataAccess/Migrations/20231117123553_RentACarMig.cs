@@ -34,7 +34,7 @@ namespace DataAccess.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Year = table.Column<int>(type: "int", nullable: false),
+                    BirthYear = table.Column<int>(type: "int", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -63,9 +63,9 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CarId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CustomerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmployeeId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CarId = table.Column<int>(type: "int", nullable: false),
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
                     RentDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

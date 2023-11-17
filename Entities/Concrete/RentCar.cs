@@ -10,9 +10,9 @@ namespace Entities.Concrete
     public class RentCar : IEntity
     {
         public int Id{ get; set; }
-        public string CarId { get; set; }
-        public string CustomerId { get; set; }
-        public string EmployeeId { get; set; }
+        public int CarId { get; set; }
+        public int CustomerId { get; set; }
+        public int EmployeeId { get; set; }
         public DateTime RentDate { get; set; }
 
 

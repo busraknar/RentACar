@@ -1,5 +1,6 @@
 ﻿
 using Core.DataAccess;
+using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -11,31 +12,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, RentACarContext>, ICarDal
     {
-        public void Add(Car entity)
+        public List<Car> Cars(string year)
         {
-            throw new NotImplementedException();
-        }
+            using(RentACarContext rentACarContext= new RentACarContext())
+            {
+                return rentACarContext.Set<Car>().Where(c=>c.ModelYear == year).ToList();
 
-        public void Delete(Car entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Car Get(Expression<Func<Car, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Car entity)
-        {
-            throw new NotImplementedException();
+            }
         }
     }
 }
